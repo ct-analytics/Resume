@@ -43,12 +43,12 @@ Aside
 ================================================================================
 
 
-![logo](beta_dist.png){width=100%}
+![logo](logo.png){width=100%}
 
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
 if(PDF_EXPORT){
-  cat("View this CV online with links at _nickstrayer.me/cv_")
+  cat("View this CV online with links at _christopherteixeira.com_")
 } else {
   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
 }
@@ -58,12 +58,10 @@ Contact {#contact}
 --------------------------------------------------------------------------------
 
 
-- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
-- <i class="fa fa-twitter"></i> NicholasStrayer
-- <i class="fa fa-github"></i> github.com/nstrayer
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
-- <i class="fa fa-phone"></i> (734) 645-0110
-
+- <i class="fa fa-envelope"></i> feasible.analytics@gmail.com
+- <i class="fa fa-twitter"></i> CT_Analytics
+- <i class="fa fa-github"></i> github.com/ct-analytics
+- <i class="fa fa-link"></i> [christopherteixeira.com](http://christopherteixeira.com/)
 
 
 Language Skills {#skills}
@@ -73,12 +71,11 @@ Language Skills {#skills}
 skills <- tribble(
   ~skill,               ~level,
   "R",                  5,
-  "Javascript (d3.js)", 4.5,
+  "Javascript (d3.js)", 2,
   "Python",             4,
-  "Bash",               3.5,
-  "SQL",                3,
-  "C++",                3,
-  "AWK",                3
+  "Bash",               3,
+  "SQL",                5,
+  "Java",               3
 )
 build_skill_bars(skills)
 ```
@@ -102,13 +99,12 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Christopher Teixeira {#title}
 --------------------------------------------------------------------------------
 
 
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
+intro_text <- "I have supported a variety of federal and commercial customers over my career. The common theme across my career is using data to support decision making amongst my customers. Traditionally, this means being able to understand how it was collected and its weaknesses, adding value through incorporation into a model, and communicating it through a medium like interactive visualizations. 
 "
 cat(sanitize_links(intro_text))
 ```
@@ -124,20 +120,11 @@ print_section(position_data, 'education')
 
 
 
-Research Experience {data-icon=laptop}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'research_positions')
-```
-
-
-
 Industry Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ::: aside
-I have worked in a variety of roles ranging from journalist to software engineer to data scientist. I like collaborative environments where I can learn from my peers. 
+I have worked in a variety of roles all varying forms of using data. In each position I have enjoyed opportunities to mentor other staff, helping them learn about how to become better data scientists. 
 :::
 
 ```{r}
@@ -148,24 +135,13 @@ print_section(position_data, 'industry_positions')
 <br>
 <br>
 
-Teaching Experience {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
-::: aside
-I am passionate about education. I believe that no topic is too complex if the teacher is empathetic and willing to think about new methods of approaching task. 
-:::
-
-```{r}
-print_section(position_data, 'teaching_positions')
-```
-
 
 Selected Data Science Writing {data-icon=chart-line}
 --------------------------------------------------------------------------------
 
 
 ::: aside
-I regularly blog about data science and visualization on my blog [LiveFreeOrDichotomize.](https://livefreeordichotomize.com/)
+I regularly blog about data science and visualization on my blog [FeasibleAnalytics](http://christopherteixeira.com/#posts)
 :::
 
 ```{r}
