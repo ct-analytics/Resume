@@ -1,10 +1,10 @@
 
 * {
   /* Override default right margin for sidebar*/
-  --pagedjs-margin-right: 0.2in !important;
+  --pagedjs-margin-right: 0.1in !important;
   --pagedjs-margin-left: 0;
-  --pagedjs-margin-top: 0.2in;
-  --pagedjs-margin-bottom: 0.2in;
+  --pagedjs-margin-top: 0.1in;
+  --pagedjs-margin-bottom: 0.1in;
 }
 
 [data-id="main"] { 
@@ -12,7 +12,7 @@
 }
 
 [data-id="title"] {
-  margin: 0 0.5in 0.08in -0.5in;
+  margin: 0 0.25in 0.08in -0.25in;
 }
 
 .main-block {
@@ -22,7 +22,7 @@
 
 /* Customize some of the sizing variables */
 :root {
-  --sidebar-width: 12rem !important; /* Shrink sidebar width  */
+  --sidebar-width: 14rem !important; /* Shrink sidebar width  */
   --sidebar-horizontal-padding: 0.02in; /* Reduce sidebar padding */
 }
 
@@ -39,7 +39,7 @@
 }
 
 .aside .level2 {
-  margin-top: 0.315in;
+  margin-top: 0.125in;
 }
 
 .aside p {
