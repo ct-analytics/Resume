@@ -1,41 +1,40 @@
 ---
-title: "Christopher Teixeira's CV"
+title: Christopher Teixeira's Resume"
 author: Christopher Teixeira
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
-    css: ['css/styles.css', 'resume']
+    css: ['css/custom_resume.css', 'css/styles.css', 'resume']
     # set it to true for a self-contained HTML page but it'll take longer to render
     self_contained: true
+
 ---
+
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
   results='asis', 
   echo = FALSE
 )
-library(glue)
 library(tidyverse)
+library(glue)
 # Set this to true to have links turned into footnotes at the end of the document
 PDF_EXPORT <- FALSE
 # Holds all the links that were inserted for placement at the end
 links <- c()
 source('parsing_functions.R')
-# Load csv with position info
-position_data <- read_csv('positions.csv')
-```
-
-
-```{r}
-# When in export mode the little dots are unaligned, so fix that. 
-if(PDF_EXPORT){
-  cat("
-  <style>
-  :root{
-    --decorator-outer-offset-left: -6.5px;
-  }
-  </style>")
-}
+# First let's get the data, filtering to only the items tagged as
+# Resume items
+position_data <- read_csv('positions.csv') %>% 
+  filter(in_resume) %>% 
+  mutate(
+    # Build some custom sections by collapsing others
+    section = case_when(
+      section %in% c('research_positions', 'industry_positions') ~ 'positions', 
+      section %in% c('data_science_writings', 'by_me_press') ~ 'writings',
+      TRUE ~ section
+    )
+  ) 
 ```
 
 
@@ -43,53 +42,64 @@ Aside
 ================================================================================
 
 
-![logo](logo.png){width=100%}
-
-```{r}
-# When in export mode the little dots are unaligned, so fix that. 
-if(PDF_EXPORT){
-  cat("View this CV online with links at _christopherteixeira.com_")
-} else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf)")
-}
-```
+![logo](beta_dist.png){width=100%}
 
 Contact {#contact}
 --------------------------------------------------------------------------------
 
 
-- <i class="fa fa-envelope"></i> feasible.analytics@gmail.com
-- <i class="fa fa-twitter"></i> CT_Analytics
-- <i class="fa fa-github"></i> github.com/ct-analytics
-- <i class="fa fa-link"></i> [christopherteixeira.com](http://christopherteixeira.com/)
+
+- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
+- <i class="fa fa-twitter"></i> NicholasStrayer
+- <i class="fa fa-github"></i> github.com/nstrayer
+- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
+- <i class="fa fa-phone"></i> (734) 645-0110
+
 
 
 Language Skills {#skills}
 --------------------------------------------------------------------------------
 
+
 ```{r}
 skills <- tribble(
   ~skill,               ~level,
   "R",                  5,
-  "Javascript (d3.js)", 2,
+  "Javascript (d3.js)", 4.5,
   "Python",             4,
-  "Bash",               3,
-  "SQL",                5,
-  "Java",               3
+  "Bash",               3.5,
+  "SQL",                3,
+  "C++",                3,
+  "AWK",                3
 )
 build_skill_bars(skills)
 ```
 
 
 
+Open Source Contributions {#open-source}
+--------------------------------------------------------------------------------
+
+All projects available at `github.com/nstrayer/<name>`
+
+
+- `shinysense`: R package to use sensor data in Shiny apps
+- `tuftesque`: Hugo theme (behind LiveFreeOrDichotomize.com)
+- `slid3r`: D3 add-on for fully svg slider inputs
+
+
+More info {#more-info}
+--------------------------------------------------------------------------------
+
+See full CV at nickstrayer.me/cv for more complete list of positions and publications.
 
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
+Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available at [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
 
 Last updated on `r Sys.Date()`.
 
@@ -99,12 +109,12 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Christopher Teixeira {#title}
+Nick Strayer {#title}
 --------------------------------------------------------------------------------
 
-
 ```{r}
-intro_text <- "I have supported a variety of federal and commercial customers over my career. The common theme across my career is using data to support decision making amongst my customers. Traditionally, this means being able to understand how it was collected and its weaknesses, adding value through incorporation into a model, and communicating it through a medium like interactive visualizations. 
+intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
+Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
 "
 cat(sanitize_links(intro_text))
 ```
@@ -115,80 +125,23 @@ Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'education')
+position_data %>% print_section('education')
 ```
 
 
 
-Industry Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-::: aside
-I have worked in a variety of roles all varying forms of using data. In each position I have enjoyed opportunities to mentor other staff, helping them learn about how to become better data scientists. 
-:::
-
-```{r}
-print_section(position_data, 'industry_positions')
-```
-
-<br>
-<br>
-<br>
-
-
-Selected Data Science Writing {data-icon=chart-line}
---------------------------------------------------------------------------------
-
-
-::: aside
-I regularly blog about data science and visualization on my blog [FeasibleAnalytics](http://christopherteixeira.com/#posts)
-:::
-
-```{r}
-print_section(position_data, 'data_science_writings')
-```
-
-
-
-Selected Press (About)  {data-icon=newspaper}
+Selected Positions {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'about_me_press')
+position_data %>% print_section('positions')
 ```
 
-
-
-Selected Press (By)  {data-icon=newspaper}
+Selected Writing {data-icon=newspaper}
 --------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'by_me_press')
-```
-
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'academic_articles')
-```
-
 
 
 ```{r}
-if(PDF_EXPORT){
-  cat("
-  
-Links {data-icon=link}
---------------------------------------------------------------------------------
-<br>
-")
-  
-  walk2(links, 1:length(links), function(link, index){
-    print(glue('{index}. {link}'))
-  })
-}
+position_data %>% print_section('writings')
 ```
+
