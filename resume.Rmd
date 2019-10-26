@@ -42,18 +42,17 @@ Aside
 ================================================================================
 
 
-![logo](beta_dist.png){width=100%}
+![logo](logo_chris_transparent.png){width=100%}
 
 Contact {#contact}
 --------------------------------------------------------------------------------
 
 
 
-- <i class="fa fa-envelope"></i> nick.strayer@gmail.com
-- <i class="fa fa-twitter"></i> NicholasStrayer
-- <i class="fa fa-github"></i> github.com/nstrayer
-- <i class="fa fa-link"></i> [nickstrayer.me](http://nickstrayer.me/)
-- <i class="fa fa-phone"></i> (734) 645-0110
+- <i class="fa fa-envelope"></i> feasible.analytics@gmail.com
+- <i class="fa fa-twitter"></i> CT_Analytics
+- <i class="fa fa-github"></i> github.com/ct-analytics
+- <i class="fa fa-link"></i> [christopherteixeira.com](http://christopherteixeira.com/)
 
 
 
@@ -65,13 +64,13 @@ Language Skills {#skills}
 skills <- tribble(
   ~skill,               ~level,
   "R",                  5,
-  "Javascript (d3.js)", 4.5,
+  "Javascript (d3.js)", 2,
   "Python",             4,
-  "Bash",               3.5,
-  "SQL",                3,
-  "C++",                3,
-  "AWK",                3
-)
+  "Bash",               3,
+  "SQL",                5,
+  "Java",               3,
+  "SAS",                2.5
+) %>% arrange(desc(level))
 build_skill_bars(skills)
 ```
 
