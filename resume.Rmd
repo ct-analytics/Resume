@@ -98,7 +98,7 @@ Disclaimer {#disclaimer}
 
 Made w/ [**pagedown**](https://github.com/rstudio/pagedown). 
 
-Source code: [github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+Source code: [github.com/ct-analytics/Resume](https://github.com/ct-analytics/Resume).
 
 Last updated on `r Sys.Date()`.
 
@@ -108,12 +108,11 @@ Last updated on `r Sys.Date()`.
 Main
 ================================================================================
 
-Nick Strayer {#title}
+Christopher Teixeira {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
-intro_text <- "I have made [visualizations viewed by hundreds of thousands of people](https://www.nytimes.com/interactive/2016/08/26/us/college-student-migration.html), [sped up query times for 25 terabytes of data by an average of 4,800 times](https://livefreeordichotomize.com/2019/06/04/using_awk_and_r_to_parse_25tb/), and built [packages for R](https://github.com/nstrayer/shinysense) that let you [do magic](http://nickstrayer.me/dataDayTexas/).
-Currently searching for a data science position that allows me to build tools using visualization and machine learning to help people explore and understand their data. 
+intro_text <- "I have supported a variety of federal and commercial customers over my career. The common theme across my career is using data to support decision making amongst my customers. Traditionally, this means being able to understand how it was collected and its weaknesses, adding value through incorporation into a model, and communicating it through a medium like interactive visualizations. 
 "
 cat(sanitize_links(intro_text))
 ```
@@ -134,6 +133,13 @@ Selected Positions {data-icon=suitcase}
 
 ```{r}
 position_data %>% print_section('positions')
+```
+
+Selected Projects {data-icon=clipboard-list}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'work_projects')
 ```
 
 Selected Writing {data-icon=newspaper}
