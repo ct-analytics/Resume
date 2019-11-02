@@ -13,7 +13,7 @@ h1,
 h2,
 h3 {
   font-family: "Playfair Display", serif;
-  color: #000;
+  color: #212529;
 }
 
 /* When in PDF export mode make sure superscripts are nice and small and italic */
@@ -55,6 +55,10 @@ sup {
   margin-left: -3px;
 }
 
+.fa-clipboard-list {
+  margin-left: 2px;
+}
+
 /* When we have links at bottom in a list make sure they actually are numbered */
 #links li {
   list-style-type: decimal;
@@ -85,7 +89,7 @@ sup {
 
 /* Make little circle outline be a light blue */
 .decorator::after {
-  background-color: #08306b;
+  background-color: #999999;
 }
 
 /* Remove the fake bullets from lists */
