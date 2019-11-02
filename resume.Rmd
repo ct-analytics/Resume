@@ -44,6 +44,9 @@ Aside
 
 ![logo](logo_chris_transparent.png){width=100%}
 
+<br>
+<br>
+
 Contact {#contact}
 --------------------------------------------------------------------------------
 
@@ -52,8 +55,11 @@ Contact {#contact}
 - <i class="fa fa-envelope"></i> feasible.analytics@gmail.com
 - <i class="fa fa-twitter"></i> CT_Analytics
 - <i class="fa fa-github"></i> github.com/ct-analytics
+- <i class="fa fa-linkedin"></i> [linkedin/in/christopherteixeira](https://www.linkedin.com/in/christopherteixeira/)
 - <i class="fa fa-link"></i> [christopherteixeira.com](http://christopherteixeira.com/)
 
+<br>
+<br>
 
 
 Language Skills {#skills}
@@ -69,16 +75,20 @@ skills <- tribble(
   "Bash",               3,
   "SQL",                5,
   "Java",               3,
-  "SAS",                2.5
+  "SAS",                2.5,
+  "AnyLogic",           3.5,
+  "Tableau",            4.5
 ) %>% arrange(desc(level))
 build_skill_bars(skills)
 ```
 
+<br>
+<br>
 
 More info {#more-info}
 --------------------------------------------------------------------------------
 
-See full CV at christopherteixeira.com/cv for more complete list of positions and publications.
+See full CV at [christopherteixeira.com/cv](http://christopherteixeira.com/cv) for a more complete list of projects and publications.
 
 
 Disclaimer {#disclaimer}
@@ -122,6 +132,7 @@ Work Experience {data-icon=suitcase}
 ```{r}
 position_data %>% print_section('positions')
 ```
+
 
 Selected Projects {data-icon=clipboard-list}
 --------------------------------------------------------------------------------
