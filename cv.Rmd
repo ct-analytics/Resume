@@ -1,5 +1,5 @@
 ---
-title: "Christopher Teixeira's CV"
+title: "Christopher M. Teixeira's CV"
 author: Christopher Teixeira
 date: "`r Sys.Date()`"
 output:
@@ -61,6 +61,7 @@ Contact {#contact}
 - <i class="fa fa-envelope"></i> feasible.analytics@gmail.com
 - <i class="fa fa-twitter"></i> CT_Analytics
 - <i class="fa fa-github"></i> github.com/ct-analytics
+- <i class="fa fa-linkedin"></i> [linkedin/in/christopherteixeira](https://www.linkedin.com/in/christopherteixeira/)
 - <i class="fa fa-link"></i> [christopherteixeira.com](http://christopherteixeira.com/)
 
 
@@ -76,7 +77,9 @@ skills <- tribble(
   "Bash",               3,
   "SQL",                5,
   "Java",               3,
-  "SAS",                2.5
+  "SAS",                2.5,
+  "AnyLogic",           3.5,
+  "Tableau",            4.5
 ) %>% arrange(desc(level))
 build_skill_bars(skills)
 ```
@@ -132,9 +135,13 @@ Industry Experience {data-icon=suitcase}
 print_section(position_data, 'industry_positions')
 ```
 
-<br>
-<br>
-<br>
+
+Selected Projects {data-icon=clipboard-list}
+--------------------------------------------------------------------------------
+
+```{r}
+print_section(position_data, 'work_projects')
+```
 
 
 Selected Data Science Writing {data-icon=chart-line}
@@ -151,30 +158,12 @@ print_section(position_data, 'data_science_writings')
 
 
 
-Selected Press (About)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'about_me_press')
-```
-
-
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-print_section(position_data, 'by_me_press')
-```
-
-
-
 
 Selected Publications, Posters, and Talks {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
-print_section(position_data, 'academic_articles')
+print_section(position_data, 'academic_papers')
 ```
 
 
