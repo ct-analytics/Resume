@@ -4,7 +4,7 @@ author: Christopher Teixeira
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
-    css: ['css/styles.css', 'resume']
+    css: ['css/styles.css', 'resume', 'css/custom_resume.css']
     self_contained: true
 ---
 
@@ -22,7 +22,7 @@ links <- c()
 source('parsing_functions.R')
 
 # Load csv with position info
-position_data <- read_csv('positions.csv')
+position_data <- read_csv('positions_updated.csv')
 ```
 
 
@@ -62,7 +62,7 @@ Contact {#contact}
 - <i class="fa fa-twitter"></i> CT_Analytics
 - <i class="fa fa-github"></i> github.com/ct-analytics
 - <i class="fa fa-linkedin"></i> [linkedin/in/christopherteixeira](https://www.linkedin.com/in/christopherteixeira/)
-- <i class="fa fa-link"></i> [christopherteixeira.com](http://christopherteixeira.com/)
+- <i class="fa fa-link"></i> [christopherteixeira.com](https://christopherteixeira.com/)
 
 
 Language Skills {#skills}
@@ -112,7 +112,7 @@ Christopher Teixeira {#title}
 
 
 ```{r}
-intro_text <- "I have supported a variety of federal and commercial customers over my career. The common theme across my career is using data to support decision making amongst my customers. Traditionally, this means being able to understand how it was collected and its weaknesses, adding value through incorporation into a model, and communicating it through a medium like interactive visualizations. 
+intro_text <- "I have supported a variety of federal and commercial customers over my career. The common theme across my career is adapting data to support decision making amongst my customers. Traditionally, this means being able to understand how it was collected and its weaknesses, adding value through incorporation into a model, and communicating it through a medium incorporating interactive visualizations. 
 "
 cat(sanitize_links(intro_text))
 ```
