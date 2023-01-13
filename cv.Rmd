@@ -43,7 +43,7 @@ Aside
 ================================================================================
 
 
-![logo](logo_chris_transparent.png){width=100%}
+![logo](../../img/Logo/logo-high-transparent.png){width=100%}
 
 ```{r}
 # When in export mode the little dots are unaligned, so fix that. 
@@ -58,9 +58,9 @@ Contact {#contact}
 --------------------------------------------------------------------------------
 
 
-- <i class="fa fa-envelope"></i> feasible.analytics@gmail.com
-- <i class="fa fa-twitter"></i> CT_Analytics
-- <i class="fa fa-github"></i> github.com/ct-analytics
+- <i class="fa fa-envelope"></i> chris@christopherteixeira.com
+- <i class="fa fa-twitter"></i> [CT_Analytics](https://mobile.twitter.com/CT_Analytics)
+- <i class="fa fa-github"></i> [github.com/ct-analytics](https://github.com/ct-analytics)
 - <i class="fa fa-linkedin"></i> [linkedin/in/christopherteixeira](https://www.linkedin.com/in/christopherteixeira/)
 - <i class="fa fa-link"></i> [christopherteixeira.com](https://christopherteixeira.com/)
 
@@ -72,13 +72,13 @@ Language Skills {#skills}
 skills <- tribble(
   ~skill,               ~level,
   "R",                  5,
-  "Javascript (d3.js)", 2,
+  "Javascript",         2,
   "Python",             4,
-  "Bash",               3,
+  "Bash",               3.5,
   "SQL",                5,
-  "Java",               3,
+  "Java",               2.5,
   "SAS",                2.5,
-  "AnyLogic",           3.5,
+  "AnyLogic",           3,
   "Tableau",            4.5
 ) %>% arrange(desc(level))
 build_skill_bars(skills)
@@ -112,7 +112,7 @@ Christopher Teixeira {#title}
 
 
 ```{r}
-intro_text <- "I have supported a variety of federal and commercial customers over my career. The common theme across my career is adapting data to support decision making amongst my customers. Traditionally, this means being able to understand how it was collected and its weaknesses, adding value through incorporation into a model, and communicating it through a medium incorporating interactive visualizations. 
+intro_text <- "The common theme across my career is using data to explain uncertainty and support decision making across the public sector. Traditionally, this means being able to understand how data was collected and its weaknesses, using data through different algorithms to address challenging questions, and communicating complex results through various visualization techniques. 
 "
 cat(sanitize_links(intro_text))
 ```
@@ -149,7 +149,7 @@ Selected Data Science Writing {data-icon=chart-line}
 
 
 ::: aside
-I regularly blog about data science and visualization on my blog [FeasibleAnalytics](http://christopherteixeira.com/#posts)
+I regularly blog about data science and visualization on my blog [christopherteixeira.com](https://christopherteixeira.com/#posts)
 :::
 
 ```{r}

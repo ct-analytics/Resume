@@ -13,7 +13,7 @@ h1,
 h2,
 h3 {
   font-family: "Playfair Display", serif;
-  color: #212529;
+  color: #0088CC;
 }
 
 /* When in PDF export mode make sure superscripts are nice and small and italic */
@@ -36,10 +36,10 @@ sup {
 /* Customize some of the sizing variables */
 :root {
   --sidebar-width: 14rem; /* Shrink sidebar width  */
-  --sidebar-background-color: #0088CC; /* Make sidebar blue */
+  --sidebar-background-color: #999999; /* Make sidebar blue */
   --sidebar-horizontal-padding: 0.01in; /* Reduce sidebar padding */
   --decorator-outer-dim: 10px; /* Make position deliniating circles larger */
-  --decorator-border: 2px solid #0088CC; /* Make timeline a blue as well*/
+  --decorator-border: 2px solid #999999; /* Make timeline a blue as well*/
 }
 
 .details .place {
